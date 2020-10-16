@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài 3 phần javascript</h2>
+        <form action="">
+            <div class="form-group">
+            <label for="comment">Hộp thứ 1:</label>
+            <textarea class="form-control" rows="5" id="hop1" name="text" onkeypress="keypressHandler(event)"></textarea>
+            </div>
+
+            <div class="form-group">
+            <label for="comment">Hộp thứ 2:</label>
+            <textarea class="form-control" rows="5" id="hop2" name="text" readonly></textarea>
+            </div>
+            <button type="button" onclick="tsw_open_demo_window();">Mở trang web</button>
+            <button type="button" onclick="window.close();">Close</button>
+               
+        </form>
+    </div>
+    <script>
+        document.querySelector('#hop1').addEventListener('change', (event)=>{
+            var result = document.querySelector('#hop2');
+            result.textContent = event.target.value.length;
+        });
+        function keypressHandler(evt)  {
+            appendLog(); 
+        }
+        function appendLog()  {
+            document.getElementById("hop2").textContent = document.getElementById("hop1").value.length*1 + 1;
+        }
+        function tsw_open_demo_window()
+        {
+            window.open( "b3.html" );
+        }
+    </script>
+</body>
+</html>

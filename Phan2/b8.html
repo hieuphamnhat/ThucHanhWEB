@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+            <div class="form-group">
+                <label for="">Sở thích</label></br>
+                <label class="form-check-label" for="">Đá bóng</label>
+                <input type="checkbox" id="dabong" class="messageCheckbox" value="đá bóng" >
+
+                <label class="form-check-label" for="">Đá cầu</label>
+                <input type="checkbox"  id="x" class="messageCheckbox" value="đá cầu" >
+
+                <label class="form-check-label" for="">Tenis</label>
+                <input type="checkbox"  id="tenis" class="messageCheckbox" value="tenis" >
+
+                <label class="form-check-label" for="">Cầu lông</label>
+                <input type="checkbox"  id="caulong" class="messageCheckbox" value="cầu lông" >
+
+                <label class="form-check-label" for="">Bóng bàn</label>
+                <input type="checkbox"  id="bongban" class="messageCheckbox" value="bóng bàn" >
+            </div>
+            <div class="form-group">
+                <label for="">Ngôn ngữ yêu thích nhất</label></br> 
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Anh" checked>
+                        <label class="form-check-label" for="exampleRadios1">Tiếng Anh</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Pháp">
+                        <label class="form-check-label" for="exampleRadios2">Tiếng Pháp</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="Đức">
+                        <label class="form-check-label" for="exampleRadios3">Tiếng Đức</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="Trung">
+                        <label class="form-check-label" for="exampleRadios3">Tiếng Trung</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="Nga">
+                        <label class="form-check-label" for="exampleRadios3">Tiếng Nga</label>
+                    </div>
+            </div>
+            <button type="button" onclick="check()" class="btn btn-success">Kiểm tra</button>
+        </form>
+    </div>
+    <script>
+        function check(){
+            var str = " ";
+            var count = $('input:checkbox:checked').length;
+            if(count == 0){
+                alert("chưa có sở thích");
+            }
+            else if(count >= 3){
+                alert("không cho chọn quá 3");
+                //$('#exampleCheck1:checked').prop('checked', false);
+            }else{
+                if(document.getElementById("dabong").checked){
+                    str += document.getElementById("dabong").value + " ";
+                }
+                if(document.getElementById("x").checked){
+                    str += document.getElementById("x").value + " ";
+                }
+                if(document.getElementById("tenis").checked){
+                    str += document.getElementById("tenis").value + " ";
+                }
+                if(document.getElementById("bongban").checked){
+                    str += document.getElementById("bongban").value + " ";
+                }
+                if(document.getElementById("caulong").checked){
+                    str += document.getElementById("caulong").value + " ";
+                }
+                if(document.getElementById("exampleRadios1").checked){
+                    str += document.getElementById("exampleRadios1").value + " ";
+                }
+                if(document.getElementById("exampleRadios2").checked){
+                    str += document.getElementById("exampleRadios2").value + " ";
+                }
+                if(document.getElementById("exampleRadios3").checked){
+                    str += document.getElementById("exampleRadios3").value + " ";
+                }
+                if(document.getElementById("exampleRadios4").checked){
+                    str += document.getElementById("exampleRadios4").value + " ";
+                }
+                if(document.getElementById("exampleRadios5").checked){
+                    str += document.getElementById("exampleRadios5").value + " ";
+                }
+                alert(str);
+            }
+        }
+    </script>
+</body>
+</html>

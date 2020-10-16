@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="form-group">   
+                    <label for="" style="font-style: italic;">Họ và tên</label></br>
+                    <span>
+                        <select name="favourite" class="form-control" size="10" id="myList">
+                            <option value="A">Nguyễn A</option>
+                            <option value="B">Nguyễn B</option>
+                            <option value="C">Nguyễn C</option>
+                            <option value="D">Nguyễn D</option>
+                            <option value="E">Nguyễn E</option>
+                            <option value="F">Nguyễn F</option>
+                            <option value="G">Nguyễn G</option>
+                            <option value="H">Nguyễn H</option>
+                            <option value="I">Nguyễn I</option>
+                            <option value="K">Nguyễn K</option>
+                        </select>
+                    </span>
+                </div>
+                <button type="button" onclick="add();" class="btn btn-success">Lọc tên</button>
+                 
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">   
+                    <label for="" style="font-style: italic;">Tên</label>
+                    <br>
+                    <span>
+                        <select name="words" class="form-control" id="list" size="10">
+                            
+                        </select>
+                    </span>
+                </div>
+                <button type="button" onclick="del();" class="btn btn-primary">Xóa tên</button> 
+            </div> 
+            
+        </div>
+    </div>
+    <script>
+        var sel = document.getElementById('myList');
+        var x = document.getElementById("list");
+        function checking(opt){
+            for(let j = 0; j < document.getElementById("list").options.length; j++){
+                if(opt.value == document.getElementById("list").options[j].value){
+                    console.log(opt.value);
+                    console.log(document.getElementById("list").options[j].value);
+                    document.getElementById("list").options[j].text = " ";
+                    console.log(document.getElementById("list").options[j].value);
+                    return 1;
+                }
+            }
+            return 0;
+        }
+        function add(){
+            var opt;
+            for ( var i = 0, len = sel.options.length; i < len; i++ ) {
+                opt = sel.options[i];
+                if ( opt.selected === true ) {
+                    if(checking(opt) == 0){
+                        var option = document.createElement("option");
+                        option.text = opt.value;
+                        x.add(option);
+                    }
+                }
+            }
+        }
+        function check_name(opt){
+            for(let j = 0; j < document.getElementById("myList").options.length; j++){
+                if(opt.value == document.getElementById("myList").options[j].value){
+                    console.log(opt.value);
+                    console.log(document.getElementById("list").options[j].value);
+                    document.getElementById("list").options[j].text = " ";
+                    console.log(document.getElementById("list").options[j].value);
+                    return 1;
+                }
+            }
+            return 0;
+        }
+        function del(){
+            x.remove(x.selectedIndex);
+        }
+    </script>
+</body>
+</html>

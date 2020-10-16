@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="form-group">   
+                    <label for="" style="font-style: italic;">Danh sách từ</label>
+                    <br>
+                    <span>
+                        <select name="words" class="form-control" id="mySelect" onchange="convert()">
+                            <option value=" ">Hãy chọn một từ</option>
+                            <option value="xin chào">Hello</option>
+                            <option value="tạm biệt">Good bye</option>
+                            <option value="thứ 2">Monday</option>
+                            <option value="thứ 3">Tuesday</option>
+                            <option value="thứ 4">Wednesday</option>
+                            <option value="thứ 5">Thursday</option>
+                            <option value="thứ 6">Friday</option>
+                            <option value="thứ 7">Saturday</option>
+                            <option value="chủ nhật">Sunday</option>
+                            <option value="tuần">Week</option>
+                        </select>
+                    </span>
+                </div>
+                <button type="button" onclick="tsw_open_demo_window();" class="btn btn-success">Mở trang web</button>
+                <button type="button" onclick="window.close();" class="btn btn-primary">Đóng</button>  
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">   
+                    <label for="" style="font-style: italic;">Danh sách nghĩa</label>
+                    <br>
+                    <span>
+                        <select name="words" class="form-control" id="list">
+                            <option value=" ">Hãy chọn một từ</option>
+                            <option value="Hello">xin chào</option>
+                            <option value="Good bye">tạm biệt</option>
+                            <option value="Monday">thứ 2</option>
+                            <option value="Tuesday">thứ 3</option>
+                            <option value="Wednesday">thứ 4</option>
+                            <option value="Thursday">thứ 5</option>
+                            <option value="Friday">thứ 6</option>
+                            <option value="Saturday">thứ 7</option>
+                            <option value="Sunday">chủ nhật</option>
+                            <option value="Week">tuần</option>
+                        </select>
+                    </span>
+                </div>
+            </div> 
+            
+        </div>
+    </div>
+    <script>
+        function convert(){
+            let wordE = document.getElementById("mySelect").value;
+            let words = document.getElementById("list");
+            var txt = "All options: ";
+            var i;
+            for (i = 0; i < words.length; i++) {
+                if(words.options[i].text == wordE){
+                    document.getElementById("list").options[0].text = wordE;
+                }
+            } 
+        }
+        function tsw_open_demo_window()
+        {
+            window.open( "b10.html" );
+        }
+    </script>
+</body>
+</html>

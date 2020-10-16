@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="form-group">   
+                    <label for="" style="font-style: italic;">Từ</label>
+                    <br>
+                    <input type="text" class="form-control" id="w">
+                </div>
+                <button type="button" onclick="check()" class="btn btn-success">Kiểm tra</button>    
+            </div>
+
+            <div class="col-sm-6">
+                <label for="" style="font-style: italic;">Văn bản</label>
+                <textarea class="form-control" rows="5" id="list"></textarea>
+            </div> 
+        </div>
+    </div>
+    <script>
+        function check(){
+            let word = document.getElementById("w").value;
+            let text = document.getElementById("list").value;
+            text = text.split(" ");
+            let count = 0;
+            text.forEach(element => {
+                if(element == word){
+                    count = count + 1;
+                }
+            });
+            alert(count);
+        }
+        
+    </script>
+</body>
+</html>

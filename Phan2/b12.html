@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="form-group">   
+                    <label for="" style="font-style: italic;">Sở thích</label></br>
+                    <span>
+                        <select name="favourite" class="form-control" size="6" id="myList">
+                            <option value="Đua xe">Đua xe</option>
+                            <option value="Đá bóng">Đá bóng</option>
+                            <option value="Cầu lông">Cầu lông</option>
+                            <option value="Tenis">Tenis</option>
+                            <option value="Bóng bàn">Bóng bàn</option>
+                            <option value="Thể dục dụng cụ">Thể dụng dụng cụ</option>
+                        </select>
+                    </span>
+                </div>
+                <button type="button" onclick="add();" class="btn btn-success">Thêm</button>
+                 
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">   
+                    <label for="" style="font-style: italic;">Danh sách sở thích </label>
+                    <br>
+                    <span>
+                        <select name="words" class="form-control" id="list" size="10" >
+                            
+                        </select>
+                    </span>
+                </div>
+                <button type="button" onclick="add_all();" class="btn btn-primary">Thêm cả</button> 
+            </div> 
+            
+        </div>
+    </div>
+    <script>
+        var sel = document.getElementById('myList');
+        var x = document.getElementById("list");
+        function checking(opt){
+            for(let j = 0; j < document.getElementById("list").options.length; j++){
+                if(opt.value == document.getElementById("list").options[j].value){
+                    console.log(opt.value);
+                    console.log(document.getElementById("list").options[j].value);
+                    document.getElementById("list").options[j].text = " ";
+                    console.log(document.getElementById("list").options[j].value);
+                    return 1;
+                }
+            }
+            return 0;
+        }
+        function add(){
+            var opt;
+            for ( var i = 0, len = sel.options.length; i < len; i++ ) {
+                opt = sel.options[i];
+                if ( opt.selected === true ) {
+                    if(checking(opt) == 0){
+                        var option = document.createElement("option");
+                        option.text = opt.value;
+                        x.add(option);
+                    }
+                }
+            }
+        }
+        function add_all(){
+            var opt;
+            for(let j = 0; j < document.getElementById('myList').options.length; j++){
+                opt = sel.options[j];
+                var option = document.createElement("option");
+                option.text = opt.value;
+                x.add(option);
+            }
+        }
+    </script>
+</body>
+</html>

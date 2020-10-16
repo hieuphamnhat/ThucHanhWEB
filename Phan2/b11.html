@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="" style="font-style: italic;">Sở thích</label></br>
+                    <label class="form-check-label" for="exampleCheck1">Đá bóng</label>
+                    <input type="checkbox" id="1" value="Đá bóng" class="messageCheckbox" onclick="choose()"><br>
+                    <label class="form-check-label" for="exampleCheck1">Đá cầu</label>
+                    <input type="checkbox" id="2" value="Đá cầu" class="messageCheckbox" onclick="choose()"><br>
+                    <label class="form-check-label" for="exampleCheck1">Tenis</label>
+                    <input type="checkbox"  id="3" value="Tenis" class="messageCheckbox" onclick="choose()"><br>
+                    <label class="form-check-label" for="exampleCheck1">Cầu lông</label>
+                    <input type="checkbox"  id="4" value="Cầu lông" class="messageCheckbox" onclick="choose()"><br>
+                    <label class="form-check-label" for="exampleCheck1">Bóng bàn</label>
+                    <input type="checkbox"  id="5" value="Bóng bàn" class="messageCheckbox" onclick="choose()"><br>
+                </div>
+                <button type="button" onclick="add_All()" class="btn btn-primary">Thêm cả</button>
+            </div>
+
+            <div class="col-sm-6">
+                <textarea class="form-control" rows="6" id="list"></textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+        function choose(){
+            let tmp = "";
+            if(document.getElementById("1").checked == true){
+                tmp +=  document.getElementById("1").value + '\n';
+            }
+            if(document.getElementById("1").checked == false){
+                tmp +=  "" + '\n'
+            }
+            if(document.getElementById("2").checked == true){
+                tmp +=  document.getElementById("2").value + '\n';
+            }
+            if(document.getElementById("2").checked == false){
+                tmp +=  "" ;
+            }
+            if(document.getElementById("3").checked == true){ 
+                tmp += document.getElementById("3").value + '\n';
+            }
+            if(document.getElementById("3").checked == false){
+                tmp +=  "" ;
+            }
+            if(document.getElementById("4").checked == true){ 
+                tmp += document.getElementById("4").value + '\n';
+            }
+            if(document.getElementById("4").checked == false){
+                tmp += "" ;
+            }
+            if(document.getElementById("5").checked == true){ 
+                tmp += document.getElementById("5").value + '\n';
+            }
+            if(document.getElementById("5").checked == false){
+                tmp +=  "";
+            }
+            document.getElementById("list").innerHTML = tmp;
+        }
+        function add_All(){
+            document.getElementById("list").innerHTML += document.getElementById("1").value + '\n' +
+            document.getElementById("2").value + '\n' + document.getElementById("3").value + '\n' +
+            document.getElementById("4").value + '\n' +  document.getElementById("5").value;
+        }
+    </script>
+</body>
+</html>

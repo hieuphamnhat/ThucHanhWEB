@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PHP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Phần 3 bài 2</h2>
+        <form action="b2.php" method="POST">
+            <div class="form-group">
+                <label for="">Họ và tên</label></br>
+                <textarea class="form-control" rows="1" id="hop1" name="name"></textarea>
+            </div>
+            <div class="form-group"> 
+                <label for="">Ngày tháng năm sinh</label></br>
+                <span>
+                    <select name="month" >
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                    </select> 
+                </span>
+                <span>
+                    <select name="day" >
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </span>
+                <span>
+                    <select name="year" >
+                        <option value="1907">1999</option>
+                        <option value="1906">2000</option>
+                        <option value="1905">2001</option>
+                        <option value="1904">2002</option>
+                        <option value="1903">2003</option>
+                    </select>
+                </span>
+           </div>
+           <div class="form-group">
+                <label for="">Quê quán</label></br> 
+                <span>
+                    <select name="location" class="form-control">
+                        <option value="Hưng Yên">Hưng Yên</option>
+                        <option value="Hà Nội">Hà Nội</option>
+                        <option value="Thái Bình">Thái Bình</option>
+                        <option value="Nghệ An">Nghệ An</option>
+                        <option value="Hải Dương">Hải Dương</option>
+                    </select>
+                </span>    
+            </div>
+            <div class="form-group">
+                <label for="">Địa chỉ liên hệ</label></br>
+                <input type="email" name="email"class="form-control" id="dclh" aria-describedby="emailHelp" placeholder="Nhập email">
+            </div>
+            <div class="form-group">
+                <label for="">Ghi chú</label></br>
+                <textarea class="form-control" rows="1" id="ghichu" name="ghichu"></textarea>
+            </div>
+            <!-- Default unchecked -->
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="defaultUnchecked" name="sex" checked value="nam">
+                <label class="custom-control-label" for="defaultUnchecked">Nam</label>
+            </div>
+  
+             <!-- Default checked -->
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="defaultChecked" name="sex" value="nữ">
+                <label class="custom-control-label" for="defaultChecked">Nữ</label>
+            </div>
+            <label for="">Ảnh</label></br> 
+            <img src="gohan.jpg" class="img-thumbnail w-25 p-3" alt="Responsive image" name="">
+            <div class="form-group">
+                <label for="">Học vấn</label></br> 
+                <span>
+                    <select name="level" class="form-control">
+                        <option value="Cao đẳng">Cao đẳng</option>
+                        <option value="Cử nhân">Cử nhân</option>
+                        <option value="Thạc sỹ">Thạc sỹ</option>
+                        <option value="Tiến sỹ">Tiến sỹ</option>
+                    </select>
+                </span>    
+            </div>
+            <div class="form-group">
+                <label for="">Ngoại ngữ đã biết</label></br>
+                <input type="checkbox" id="exampleCheck1" name="lan[]" value="Tiếng Anh">
+                <label class="form-check-label" for="exampleCheck1">Anh</label><br>
+                <input type="checkbox" id="exampleCheck1" name="lan[]" value="Tiếng Pháp">
+                <label class="form-check-label" for="exampleCheck1">Pháp</label><br>
+                <input type="checkbox"  id="exampleCheck1" name="lan[]" value="Tiếng Đức">
+                <label class="form-check-label" for="exampleCheck1">Đức</label><br>
+                <input type="checkbox"  id="exampleCheck1" name="lan[]" value="Tiếng Nga">
+                <label class="form-check-label" for="exampleCheck1">Nga</label><br>
+                <input type="checkbox"  id="exampleCheck1" name="lan[]" value="Tiếng Trung Quốc">
+                <label class="form-check-label" for="exampleCheck1">Trung Quốc</label><br>
+                <input type="checkbox"  id="exampleCheck1" name="lan[]">
+                <label class="form-check-label" for="exampleCheck1">Khác</label>
+                <input type="text" class="form-control" name="other">
+            </div>
+            <div class="form-group">
+                <label for="">Sở thích</label></br> 
+                <span>
+                    <select name="favourite" class="form-control">
+                        <option value="dl">Du lịch</option>
+                        <option value="db">Đá bóng</option>
+                        <option value="go">Golf</option>
+                        <option value="tn">Tenis</option>
+                        <option value="xp">Xem phim</option>
+                        <option value="ds">Đọc sách</option>
+                    </select>
+                </span>    
+            </div>
+            <button type="submit" class="btn btn-primary">POST</button>
+        </form>
+    </div>
+    <script>
+        function bai1(){
+            alert(document.getElementById("hop1").value);
+        }
+        function bai2(){
+            document.getElementById("hop2").innerHTML = document.getElementById("hop1").value ;
+        }
+    </script>
+</body>
+</html>

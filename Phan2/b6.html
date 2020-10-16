@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="form-group">   
+                    <label for="" style="font-style: italic;">Nhập một từ tiếng Anh</label>
+                    <br>
+                    <input type="text" name="" id="newWord" class="form-control">
+                </div>
+                <button type="button" onclick="add()" class="btn btn-success">Kiểm tra</button>     
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">   
+                    <label for="" style="font-style: italic;">Danh sách từ</label>
+                    <br>
+                    <span>
+                        <select name="words" class="form-control" id="list" size="10">
+                           
+                        </select>
+                    </span>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <script>
+        function checking(){
+            var word = document.getElementById("newWord");
+            var tmp = document.getElementById("list");
+            word = word.split('\n'); 
+            word.forEach(element => {
+               if(tmp.toLowerCase() == element.toLowerCase()){
+                    alert("Vị trí thứ:" + tmp.indexOf(element));
+                    var r = confirm("Có muốn xóa hay không");
+                    if (r == true) {
+                        document.getElementById("mySelect").remove(element);
+                    }
+                    }else{
+                    alert(0);
+                    add(element);
+                }
+            });
+        }
+        function check(){
+            let word = document.getElementById("newWord");
+            let tmp = document.getElementById("list");
+            for(let i = 0; i < document.getElementById("list").options.length; i++){
+                if(word.value == tmp.options[i].value){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        function add(){
+            let word = document.getElementById("newWord");
+            let tmp = document.getElementById("list");
+            if(check() == -1){
+                var option = document.createElement("option");
+                option.text = word.value;
+                option.value = word.value;
+                tmp.add(option);
+            }
+            else{
+                alert("Vị trí thứ:" + check());
+                var r = confirm("Có muốn xóa hay không");
+                if (r == true) {
+                    document.getElementById("list").remove(check());
+                    console.log(check());
+                }
+            }
+        }
+    </script>
+</body>
+</html>
